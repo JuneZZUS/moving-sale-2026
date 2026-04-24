@@ -4693,7 +4693,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on April 24, 2026 at 07:52 AM</p>
+<p class="footer">Generated on April 24, 2026 at 07:58 AM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -6475,8 +6475,27 @@ function startCategoryEdit(el, key) {
 }
 
 function filterCat(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    // Reset all buttons to default state
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
+        if (b.classList.contains('all-btn')) {
+            b.style.backgroundColor = '#1d1d1f';
+            b.style.color = 'white';
+        } else {
+            b.style.backgroundColor = 'white';
+            b.style.color = b.style.borderColor;
+        }
+    });
+    // Activate clicked button
     btn.classList.add('active');
+    if (btn.classList.contains('all-btn')) {
+        btn.style.backgroundColor = '#1d1d1f';
+        btn.style.color = 'white';
+    } else {
+        btn.style.backgroundColor = btn.style.borderColor;
+        btn.style.color = 'white';
+    }
+    // Filter rows
     document.querySelectorAll('tbody tr').forEach(row => {
         row.style.display = (cat === 'all' || row.dataset.category === cat) ? '' : 'none';
     });
