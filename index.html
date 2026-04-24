@@ -4693,7 +4693,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on April 24, 2026 at 07:23 AM</p>
+<p class="footer">Generated on April 24, 2026 at 07:25 AM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -6396,7 +6396,7 @@ function showToast(msg) {
 const SOLD_KEY = 'catalog_sold_items';
 
 // ── Category filter & edit ─────────────────────────────────────────────────
-const CAT_COLORS  = ["Electronics", "Furniture", "Kitchen", "Garden", "Decoration", "Household", "Games & Toys", "Sports", "Books & Media", "Clothing", "Office", "Tools", "Other"];
+const CAT_COLORS  = ["Electronics", "Furniture", "Kitchen", "Garden", "Decoration", "Household", "Games & Toys", "Sports", "Books & Media", "Clothing", "Gift/Collection", "Office", "Tools", "Other"];
 const CAT_KEY     = 'catalog_categories';
 
 function getCategories() {
@@ -6425,7 +6425,7 @@ function _updateCatBadge(row, key, cat) {
         "Electronics":"#007aff","Furniture":"#a2845e","Kitchen":"#ff9500",
         "Garden":"#34c759","Decoration":"#af52de","Household":"#636366",
         "Games & Toys":"#ff2d55","Sports":"#5ac8fa","Books & Media":"#ff6b35",
-        "Clothing":"#5856d6","Office":"#32ade6","Tools":"#3a3a3c","Other":"#aeaeb2"
+        "Clothing":"#5856d6","Gift/Collection":"#ff9f0a","Office":"#32ade6","Tools":"#3a3a3c","Other":"#aeaeb2"
     };
     const color = colors[cat] || colors["Other"];
     const style = `background:${color};color:#fff;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;`;
@@ -6441,7 +6441,7 @@ function startCategoryEdit(el, key) {
         "Electronics":"#007aff","Furniture":"#a2845e","Kitchen":"#ff9500",
         "Garden":"#34c759","Decoration":"#af52de","Household":"#636366",
         "Games & Toys":"#ff2d55","Sports":"#5ac8fa","Books & Media":"#ff6b35",
-        "Clothing":"#5856d6","Office":"#32ade6","Tools":"#3a3a3c","Other":"#aeaeb2"
+        "Clothing":"#5856d6","Gift/Collection":"#ff9f0a","Office":"#32ade6","Tools":"#3a3a3c","Other":"#aeaeb2"
     };
     const allCats = Object.keys(colors);
     const current = el.textContent.trim();
