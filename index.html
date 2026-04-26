@@ -75,7 +75,16 @@
             font-family: inherit; padding: 0; text-decoration: underline;
         }
         .sold-toggle:hover { color: #ff3b30; }
-        /* ── Lightbox ── */
+        /* ── Lazy image shimmer placeholder ── */
+        @keyframes shimmer {
+            0%   { background-position: -400px 0; }
+            100% { background-position:  400px 0; }
+        }
+        .lazy-img:not([src]) {
+            background: linear-gradient(90deg, #e5e5ea 25%, #f2f2f7 50%, #e5e5ea 75%);
+            background-size: 800px 100%;
+            animation: shimmer 1.4s infinite;
+        }
         .lb-overlay {
             display: none; position: fixed; inset: 0; z-index: 2000;
             background: rgba(0,0,0,0.92);
@@ -281,7 +290,7 @@
             
         <tr style="background:#ffffff;" id="row-0" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Adapters.jpg" alt="Adapters" onclick="openLightbox(['images/Adapters.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Adapters.jpg" alt="Adapters" onclick="openLightbox(['images/Adapters.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Adapters
@@ -321,7 +330,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-1" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Adaptor travel 4x.jpg" alt="Adaptor Travel 4X" onclick="openLightbox(['images/Adaptor travel 4x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Adaptor travel 4x.jpg" alt="Adaptor Travel 4X" onclick="openLightbox(['images/Adaptor travel 4x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Adaptor Travel 4X
@@ -361,7 +370,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-2" class="sold-row" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Apple logo lunch bag big new.jpg" alt="Apple Logo Lunch Bag Big" onclick="openLightbox(['images/Apple logo lunch bag big new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Apple logo lunch bag big new.jpg" alt="Apple Logo Lunch Bag Big" onclick="openLightbox(['images/Apple logo lunch bag big new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Apple Logo Lunch Bag Big
@@ -401,7 +410,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-3" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Candles 2x new.jpg" alt="Candles 2X" onclick="openLightbox(['images/Candles 2x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Candles 2x new.jpg" alt="Candles 2X" onclick="openLightbox(['images/Candles 2x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Candles 2X
@@ -441,7 +450,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-4" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Card games.jpg" alt="Card Games" onclick="openLightbox(['images/Card games.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Card games.jpg" alt="Card Games" onclick="openLightbox(['images/Card games.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Card Games
@@ -481,7 +490,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-5" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chess army.jpg" alt="Chess Army" onclick="openLightbox(['images/Chess army.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chess army.jpg" alt="Chess Army" onclick="openLightbox(['images/Chess army.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chess Army
@@ -521,7 +530,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-6" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chess glass.jpg" alt="Chess Glass" onclick="openLightbox(['images/Chess glass.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chess glass.jpg" alt="Chess Glass" onclick="openLightbox(['images/Chess glass.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chess Glass
@@ -561,7 +570,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-7" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/chess multiple.jpg" alt="Chess Multiple" onclick="openLightbox(['images/chess multiple.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/chess multiple.jpg" alt="Chess Multiple" onclick="openLightbox(['images/chess multiple.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chess Multiple
@@ -601,7 +610,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-8" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chess travel kit new.jpg" alt="Chess Travel Kit" onclick="openLightbox(['images/Chess travel kit new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chess travel kit new.jpg" alt="Chess Travel Kit" onclick="openLightbox(['images/Chess travel kit new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chess Travel Kit
@@ -641,7 +650,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-9" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chinese history DVD set new.jpg" alt="Chinese History Dvd Set" onclick="openLightbox(['images/Chinese history DVD set new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chinese history DVD set new.jpg" alt="Chinese History Dvd Set" onclick="openLightbox(['images/Chinese history DVD set new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chinese History Dvd Set
@@ -681,7 +690,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-10" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Cocktail mixing glass set new.jpg" alt="Cocktail Mixing Glass Set" onclick="openLightbox(['images/Cocktail mixing glass set new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Cocktail mixing glass set new.jpg" alt="Cocktail Mixing Glass Set" onclick="openLightbox(['images/Cocktail mixing glass set new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Cocktail Mixing Glass Set
@@ -726,7 +735,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-11" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Coffee set new.jpg" alt="Coffee Set" onclick="openLightbox(['images/Coffee set new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Coffee set new.jpg" alt="Coffee Set" onclick="openLightbox(['images/Coffee set new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Coffee Set
@@ -766,7 +775,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-12" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Darts 2x.jpg" alt="Darts 2X" onclick="openLightbox(['images/Darts 2x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Darts 2x.jpg" alt="Darts 2X" onclick="openLightbox(['images/Darts 2x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Darts 2X
@@ -806,7 +815,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-13" class="" data-category="Office">
             <td style="padding:16px;text-align:center;">
-                <img src="images/desk lights.jpg" alt="Desk Lights" onclick="openLightbox(['images/desk lights.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/desk lights.jpg" alt="Desk Lights" onclick="openLightbox(['images/desk lights.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Desk Lights
@@ -846,7 +855,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-14" class="" data-category="Office">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Dry Erase Marker new.jpg" alt="Dry Erase Marker" onclick="openLightbox(['images/Dry Erase Marker new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Dry Erase Marker new.jpg" alt="Dry Erase Marker" onclick="openLightbox(['images/Dry Erase Marker new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Dry Erase Marker
@@ -886,7 +895,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-15" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Electric pot.jpg" alt="Electric Pot" onclick="openLightbox(['images/Electric pot.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Electric pot.jpg" alt="Electric Pot" onclick="openLightbox(['images/Electric pot.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Electric Pot
@@ -931,7 +940,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-16" class="" data-category="Health">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Electric thermal pad.jpg" alt="Electric Thermal Pad" onclick="openLightbox(['images/Electric thermal pad.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Electric thermal pad.jpg" alt="Electric Thermal Pad" onclick="openLightbox(['images/Electric thermal pad.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Electric Thermal Pad
@@ -971,7 +980,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-17" class="" data-category="Health">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Electric thermal pad 2.jpg" alt="Electric Thermal Pad 2" onclick="openLightbox(['images/Electric thermal pad 2.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Electric thermal pad 2.jpg" alt="Electric Thermal Pad 2" onclick="openLightbox(['images/Electric thermal pad 2.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Electric Thermal Pad 2
@@ -1011,7 +1020,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-18" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Flower fairy DVD set.jpg" alt="Flower Fairy Dvd Set" onclick="openLightbox(['images/Flower fairy DVD set.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Flower fairy DVD set.jpg" alt="Flower Fairy Dvd Set" onclick="openLightbox(['images/Flower fairy DVD set.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Flower Fairy Dvd Set
@@ -1051,7 +1060,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-19" class="sold-row" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Flower Pots and Stand.jpg" alt="Flower Pots And Stand" onclick="openLightbox(['images/Flower Pots and Stand.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Flower Pots and Stand.jpg" alt="Flower Pots And Stand" onclick="openLightbox(['images/Flower Pots and Stand.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Flower Pots And Stand
@@ -1091,7 +1100,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-20" class="" data-category="Household">
             <td style="padding:16px;text-align:center;">
-                <img src="images/foldable clothes baskets 2x.jpg" alt="Foldable Clothes Baskets 2X" onclick="openLightbox(['images/foldable clothes baskets 2x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/foldable clothes baskets 2x.jpg" alt="Foldable Clothes Baskets 2X" onclick="openLightbox(['images/foldable clothes baskets 2x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Foldable Clothes Baskets 2X
@@ -1131,7 +1140,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-21" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Game set.jpg" alt="Game Set" onclick="openLightbox(['images/Game set.jpg', 'images/game set outside.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/game set outside.jpg" alt="Game Set" onclick="openLightbox(['images/Game set.jpg', 'images/game set outside.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Game set.jpg" alt="Game Set" onclick="openLightbox(['images/Game set.jpg', 'images/game set outside.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/game set outside.jpg" alt="Game Set" onclick="openLightbox(['images/Game set.jpg', 'images/game set outside.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Game Set
@@ -1171,7 +1180,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-22" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Gloves new.jpg" alt="Gloves" onclick="openLightbox(['images/Gloves new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Gloves new.jpg" alt="Gloves" onclick="openLightbox(['images/Gloves new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Gloves
@@ -1211,7 +1220,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-23" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Golf mat.jpg" alt="Golf Mat" onclick="openLightbox(['images/Golf mat.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Golf mat.jpg" alt="Golf Mat" onclick="openLightbox(['images/Golf mat.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Golf Mat
@@ -1251,7 +1260,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-24" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Indoor bike.jpg" alt="Indoor Bike" onclick="openLightbox(['images/Indoor bike.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Indoor bike.jpg" alt="Indoor Bike" onclick="openLightbox(['images/Indoor bike.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Indoor Bike
@@ -1296,7 +1305,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-25" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Jumbling towers.jpg" alt="Jumbling Towers" onclick="openLightbox(['images/Jumbling towers.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Jumbling towers.jpg" alt="Jumbling Towers" onclick="openLightbox(['images/Jumbling towers.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Jumbling Towers
@@ -1336,7 +1345,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-26" class="" data-category="Health">
             <td style="padding:16px;text-align:center;">
-                <img src="images/KN95-20pc new.jpg" alt="Kn95-20Pc" onclick="openLightbox(['images/KN95-20pc new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/KN95-20pc new.jpg" alt="Kn95-20Pc" onclick="openLightbox(['images/KN95-20pc new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Kn95-20Pc
@@ -1376,7 +1385,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-27" class="" data-category="Office">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Laser charing pen new.jpg" alt="Laser Charing Pen" onclick="openLightbox(['images/Laser charing pen new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Laser charing pen new.jpg" alt="Laser Charing Pen" onclick="openLightbox(['images/Laser charing pen new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Laser Charing Pen
@@ -1416,7 +1425,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-28" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Mcdonald croc colleciton full new.jpg" alt="Mcdonald Croc Colleciton Full" onclick="openLightbox(['images/Mcdonald croc colleciton full new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Mcdonald croc colleciton full new.jpg" alt="Mcdonald Croc Colleciton Full" onclick="openLightbox(['images/Mcdonald croc colleciton full new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Mcdonald Croc Colleciton Full
@@ -1461,7 +1470,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-29" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Mexican gift set new.jpg" alt="Mexican Gift Set" onclick="openLightbox(['images/Mexican gift set new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Mexican gift set new.jpg" alt="Mexican Gift Set" onclick="openLightbox(['images/Mexican gift set new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Mexican Gift Set
@@ -1501,7 +1510,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-30" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Mikasa set 65 pc new.jpg" alt="Mikasa Set 65 Pc" onclick="openLightbox(['images/Mikasa set 65 pc new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Mikasa set 65 pc new.jpg" alt="Mikasa Set 65 Pc" onclick="openLightbox(['images/Mikasa set 65 pc new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Mikasa Set 65 Pc
@@ -1546,7 +1555,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-31" class="sold-row" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Misc GCs and purfume new.jpg" alt="Misc Gcs And Purfume" onclick="openLightbox(['images/Misc GCs and purfume new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Misc GCs and purfume new.jpg" alt="Misc Gcs And Purfume" onclick="openLightbox(['images/Misc GCs and purfume new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Misc Gcs And Purfume
@@ -1586,7 +1595,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-32" class="sold-row" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Monopoly inside.jpg" alt="Monopoly" onclick="openLightbox(['images/Monopoly inside.jpg', 'images/Monopoly outside.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Monopoly outside.jpg" alt="Monopoly" onclick="openLightbox(['images/Monopoly inside.jpg', 'images/Monopoly outside.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Monopoly inside.jpg" alt="Monopoly" onclick="openLightbox(['images/Monopoly inside.jpg', 'images/Monopoly outside.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Monopoly outside.jpg" alt="Monopoly" onclick="openLightbox(['images/Monopoly inside.jpg', 'images/Monopoly outside.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Monopoly
@@ -1626,7 +1635,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-33" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/MPFG Backpack New.jpg" alt="Mpfg Backpack" onclick="openLightbox(['images/MPFG Backpack New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/MPFG Backpack New.jpg" alt="Mpfg Backpack" onclick="openLightbox(['images/MPFG Backpack New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Mpfg Backpack
@@ -1666,7 +1675,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-34" class="sold-row" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Mr Pa panda 3D puzzle.jpg" alt="Mr Pa Panda 3D Puzzle" onclick="openLightbox(['images/Mr Pa panda 3D puzzle.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Mr Pa panda 3D puzzle.jpg" alt="Mr Pa Panda 3D Puzzle" onclick="openLightbox(['images/Mr Pa panda 3D puzzle.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Mr Pa Panda 3D Puzzle
@@ -1706,7 +1715,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-35" class="" data-category="Health">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Neck and leg sets.jpg" alt="Neck And Leg Sets" onclick="openLightbox(['images/Neck and leg sets.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Neck and leg sets.jpg" alt="Neck And Leg Sets" onclick="openLightbox(['images/Neck and leg sets.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Neck And Leg Sets
@@ -1746,7 +1755,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-36" class="sold-row" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/New Phone and Liar Liar.jpg" alt="New Phone And Liar Liar" onclick="openLightbox(['images/New Phone and Liar Liar.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/New Phone and Liar Liar.jpg" alt="New Phone And Liar Liar" onclick="openLightbox(['images/New Phone and Liar Liar.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 New Phone And Liar Liar
@@ -1786,7 +1795,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-37" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Painting Frames.jpg" alt="Painting Frames" onclick="openLightbox(['images/Painting Frames.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Painting Frames.jpg" alt="Painting Frames" onclick="openLightbox(['images/Painting Frames.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Painting Frames
@@ -1826,7 +1835,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-38" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Photo Frames.jpg" alt="Photo Frames" onclick="openLightbox(['images/Photo Frames.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Photo Frames.jpg" alt="Photo Frames" onclick="openLightbox(['images/Photo Frames.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Photo Frames
@@ -1866,7 +1875,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-39" class="" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Plants.jpg" alt="Plants" onclick="openLightbox(['images/Plants.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Plants.jpg" alt="Plants" onclick="openLightbox(['images/Plants.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Plants
@@ -1906,7 +1915,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-40" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Plate set new.jpg" alt="Plate Set" onclick="openLightbox(['images/Plate set new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Plate set new.jpg" alt="Plate Set" onclick="openLightbox(['images/Plate set new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Plate Set
@@ -1946,7 +1955,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-41" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Plate set xmas.jpg" alt="Plate Set Xmas" onclick="openLightbox(['images/Plate set xmas.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Plate set xmas.jpg" alt="Plate Set Xmas" onclick="openLightbox(['images/Plate set xmas.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Plate Set Xmas
@@ -1986,7 +1995,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-42" class="sold-row" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Poker chips.jpg" alt="Poker Chips" onclick="openLightbox(['images/Poker chips.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Poker chips.jpg" alt="Poker Chips" onclick="openLightbox(['images/Poker chips.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Poker Chips
@@ -2026,7 +2035,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-43" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Red envelop set of 25 new.jpg" alt="Red Envelop Set Of 25" onclick="openLightbox(['images/Red envelop set of 25 new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Red envelop set of 25 new.jpg" alt="Red Envelop Set Of 25" onclick="openLightbox(['images/Red envelop set of 25 new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Red Envelop Set Of 25
@@ -2066,7 +2075,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-44" class="" data-category="Tools">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Stone knife inside new.jpg" alt="Stone Knife" onclick="openLightbox(['images/Stone knife inside new.jpg', 'images/Stone knife outside new.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Stone knife outside new.jpg" alt="Stone Knife" onclick="openLightbox(['images/Stone knife inside new.jpg', 'images/Stone knife outside new.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Stone knife inside new.jpg" alt="Stone Knife" onclick="openLightbox(['images/Stone knife inside new.jpg', 'images/Stone knife outside new.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Stone knife outside new.jpg" alt="Stone Knife" onclick="openLightbox(['images/Stone knife inside new.jpg', 'images/Stone knife outside new.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Stone Knife
@@ -2106,7 +2115,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-45" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Sushi Set New.jpg" alt="Sushi Set" onclick="openLightbox(['images/Sushi Set New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Sushi Set New.jpg" alt="Sushi Set" onclick="openLightbox(['images/Sushi Set New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Sushi Set
@@ -2146,7 +2155,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-46" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Tea set 3x new.jpg" alt="Tea Set 3X" onclick="openLightbox(['images/Tea set 3x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Tea set 3x new.jpg" alt="Tea Set 3X" onclick="openLightbox(['images/Tea set 3x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Tea Set 3X
@@ -2186,7 +2195,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-47" class="sold-row" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Teapot set inside new.jpg" alt="Teapot Set" onclick="openLightbox(['images/Teapot set inside new.jpg', 'images/Teapot set outside new.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Teapot set outside new.jpg" alt="Teapot Set" onclick="openLightbox(['images/Teapot set inside new.jpg', 'images/Teapot set outside new.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Teapot set inside new.jpg" alt="Teapot Set" onclick="openLightbox(['images/Teapot set inside new.jpg', 'images/Teapot set outside new.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Teapot set outside new.jpg" alt="Teapot Set" onclick="openLightbox(['images/Teapot set inside new.jpg', 'images/Teapot set outside new.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Teapot Set
@@ -2226,7 +2235,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-48" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/The game of life.jpg" alt="The Game Of Life" onclick="openLightbox(['images/The game of life.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/The game of life.jpg" alt="The Game Of Life" onclick="openLightbox(['images/The game of life.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 The Game Of Life
@@ -2266,7 +2275,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-49" class="sold-row" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Totoro lunch bag new.jpg" alt="Totoro Lunch Bag" onclick="openLightbox(['images/Totoro lunch bag new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Totoro lunch bag new.jpg" alt="Totoro Lunch Bag" onclick="openLightbox(['images/Totoro lunch bag new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Totoro Lunch Bag
@@ -2306,7 +2315,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-50" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Toy ball.jpg" alt="Toy Ball" onclick="openLightbox(['images/Toy ball.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Toy ball.jpg" alt="Toy Ball" onclick="openLightbox(['images/Toy ball.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Toy Ball
@@ -2346,7 +2355,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-51" class="" data-category="Household">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Travel sheet double 2x new.jpg" alt="Travel Sheet Double 2X" onclick="openLightbox(['images/Travel sheet double 2x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Travel sheet double 2x new.jpg" alt="Travel Sheet Double 2X" onclick="openLightbox(['images/Travel sheet double 2x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Travel Sheet Double 2X
@@ -2386,7 +2395,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-52" class="sold-row" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/UNO card.jpg" alt="Uno Card" onclick="openLightbox(['images/UNO card.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/UNO card.jpg" alt="Uno Card" onclick="openLightbox(['images/UNO card.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Uno Card
@@ -2426,7 +2435,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-53" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Vase and decoration.jpg" alt="Vase And Decoration" onclick="openLightbox(['images/Vase and decoration.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Vase and decoration.jpg" alt="Vase And Decoration" onclick="openLightbox(['images/Vase and decoration.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Vase And Decoration
@@ -2466,7 +2475,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-54" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Wenfang4bao inside new.jpg" alt="Wenfang4Bao" onclick="openLightbox(['images/Wenfang4bao inside new.jpg', 'images/Wenfang4bao outside new.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Wenfang4bao outside new.jpg" alt="Wenfang4Bao" onclick="openLightbox(['images/Wenfang4bao inside new.jpg', 'images/Wenfang4bao outside new.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Wenfang4bao inside new.jpg" alt="Wenfang4Bao" onclick="openLightbox(['images/Wenfang4bao inside new.jpg', 'images/Wenfang4bao outside new.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Wenfang4bao outside new.jpg" alt="Wenfang4Bao" onclick="openLightbox(['images/Wenfang4bao inside new.jpg', 'images/Wenfang4bao outside new.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Wenfang4Bao
@@ -2506,7 +2515,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-55" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Winter socks 2x new.jpg" alt="Winter Socks 2X" onclick="openLightbox(['images/Winter socks 2x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Winter socks 2x new.jpg" alt="Winter Socks 2X" onclick="openLightbox(['images/Winter socks 2x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Winter Socks 2X
@@ -2546,7 +2555,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-56" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Xbox 360.jpg" alt="Xbox 360" onclick="openLightbox(['images/Xbox 360.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Xbox 360.jpg" alt="Xbox 360" onclick="openLightbox(['images/Xbox 360.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Xbox 360
@@ -2586,7 +2595,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-57" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chinese book new.jpg" alt="Chinese Book" onclick="openLightbox(['images/Chinese book new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chinese book new.jpg" alt="Chinese Book" onclick="openLightbox(['images/Chinese book new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chinese Book
@@ -2626,7 +2635,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-58" class="" data-category="Tools">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Crocheting set inside new.jpg" alt="Crocheting Set" onclick="openLightbox(['images/Crocheting set inside new.jpg', 'images/Crocheting set outside new.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Crocheting set outside new.jpg" alt="Crocheting Set" onclick="openLightbox(['images/Crocheting set inside new.jpg', 'images/Crocheting set outside new.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Crocheting set inside new.jpg" alt="Crocheting Set" onclick="openLightbox(['images/Crocheting set inside new.jpg', 'images/Crocheting set outside new.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Crocheting set outside new.jpg" alt="Crocheting Set" onclick="openLightbox(['images/Crocheting set inside new.jpg', 'images/Crocheting set outside new.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Crocheting Set
@@ -2666,7 +2675,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-59" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Mini bags 3x new.jpg" alt="Mini Bags 3X" onclick="openLightbox(['images/Mini bags 3x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Mini bags 3x new.jpg" alt="Mini Bags 3X" onclick="openLightbox(['images/Mini bags 3x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Mini Bags 3X
@@ -2706,7 +2715,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-60" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Plate set-KITCHENLESTAR 8 inch Porcelain Large Size Serving Plate 6 Blue new.jpg" alt="Plate Set-Kitchenlestar 8 Inch Porcelain Large Size Serving Plate 6 Blue" onclick="openLightbox(['images/Plate set-KITCHENLESTAR 8 inch Porcelain Large Size Serving Plate 6 Blue new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Plate set-KITCHENLESTAR 8 inch Porcelain Large Size Serving Plate 6 Blue new.jpg" alt="Plate Set-Kitchenlestar 8 Inch Porcelain Large Size Serving Plate 6 Blue" onclick="openLightbox(['images/Plate set-KITCHENLESTAR 8 inch Porcelain Large Size Serving Plate 6 Blue new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Plate Set-Kitchenlestar 8 Inch Porcelain Large Size Serving Plate 6 Blue
@@ -2751,7 +2760,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-61" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/TreochtFUN Art Portfolio Case Artist Bag18 x 24  outside New.jpg" alt="Treochtfun Art Portfolio Case Artist Bag18 X 24" onclick="openLightbox(['images/TreochtFUN Art Portfolio Case Artist Bag18 x 24  outside New.jpg', 'images/TreochtFUN Art Portfolio Case Artist Bag18 x 24 inside New.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/TreochtFUN Art Portfolio Case Artist Bag18 x 24 inside New.jpg" alt="Treochtfun Art Portfolio Case Artist Bag18 X 24" onclick="openLightbox(['images/TreochtFUN Art Portfolio Case Artist Bag18 x 24  outside New.jpg', 'images/TreochtFUN Art Portfolio Case Artist Bag18 x 24 inside New.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/TreochtFUN Art Portfolio Case Artist Bag18 x 24  outside New.jpg" alt="Treochtfun Art Portfolio Case Artist Bag18 X 24" onclick="openLightbox(['images/TreochtFUN Art Portfolio Case Artist Bag18 x 24  outside New.jpg', 'images/TreochtFUN Art Portfolio Case Artist Bag18 x 24 inside New.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/TreochtFUN Art Portfolio Case Artist Bag18 x 24 inside New.jpg" alt="Treochtfun Art Portfolio Case Artist Bag18 X 24" onclick="openLightbox(['images/TreochtFUN Art Portfolio Case Artist Bag18 x 24  outside New.jpg', 'images/TreochtFUN Art Portfolio Case Artist Bag18 x 24 inside New.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Treochtfun Art Portfolio Case Artist Bag18 X 24
@@ -2796,7 +2805,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-62" class="sold-row" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/The Chameleon board game.jpg" alt="The Chameleon Board Game" onclick="openLightbox(['images/The Chameleon board game.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/The Chameleon board game.jpg" alt="The Chameleon Board Game" onclick="openLightbox(['images/The Chameleon board game.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 The Chameleon Board Game
@@ -2836,7 +2845,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-63" class="sold-row" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Chinese Mahjong Set Prices (144 tiles) inside new.jpg" alt="Chinese Mahjong Set Prices (144 Tiles)" onclick="openLightbox(['images/Chinese Mahjong Set Prices (144 tiles) inside new.jpg', 'images/Chinese Mahjong Set Prices (144 tiles) outside new.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Chinese Mahjong Set Prices (144 tiles) outside new.jpg" alt="Chinese Mahjong Set Prices (144 Tiles)" onclick="openLightbox(['images/Chinese Mahjong Set Prices (144 tiles) inside new.jpg', 'images/Chinese Mahjong Set Prices (144 tiles) outside new.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Chinese Mahjong Set Prices (144 tiles) inside new.jpg" alt="Chinese Mahjong Set Prices (144 Tiles)" onclick="openLightbox(['images/Chinese Mahjong Set Prices (144 tiles) inside new.jpg', 'images/Chinese Mahjong Set Prices (144 tiles) outside new.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Chinese Mahjong Set Prices (144 tiles) outside new.jpg" alt="Chinese Mahjong Set Prices (144 Tiles)" onclick="openLightbox(['images/Chinese Mahjong Set Prices (144 tiles) inside new.jpg', 'images/Chinese Mahjong Set Prices (144 tiles) outside new.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chinese Mahjong Set Prices (144 Tiles)
@@ -2876,7 +2885,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-64" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Gamo airgun targets (paper shooting targets for pellet:BB guns) new.jpg" alt="Gamo Airgun Targets (Paper Shooting Targets For Pellet:Bb Guns)" onclick="openLightbox(['images/Gamo airgun targets (paper shooting targets for pellet:BB guns) new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Gamo airgun targets (paper shooting targets for pellet:BB guns) new.jpg" alt="Gamo Airgun Targets (Paper Shooting Targets For Pellet:Bb Guns)" onclick="openLightbox(['images/Gamo airgun targets (paper shooting targets for pellet:BB guns) new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Gamo Airgun Targets (Paper Shooting Targets For Pellet:Bb Guns)
@@ -2921,7 +2930,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-65" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Exploring kittens and Unstable unicorns games.jpg" alt="Exploring Kittens And Unstable Unicorns Games" onclick="openLightbox(['images/Exploring kittens and Unstable unicorns games.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Exploring kittens and Unstable unicorns games.jpg" alt="Exploring Kittens And Unstable Unicorns Games" onclick="openLightbox(['images/Exploring kittens and Unstable unicorns games.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Exploring Kittens And Unstable Unicorns Games
@@ -2961,7 +2970,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-66" class="" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Flower stands.jpg" alt="Flower Stands" onclick="openLightbox(['images/Flower stands.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Flower stands.jpg" alt="Flower Stands" onclick="openLightbox(['images/Flower stands.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Flower Stands
@@ -3001,7 +3010,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-67" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chinese silk embroidery  Panda piece mounted in a carved wooden display frame stand.jpg" alt="Chinese Silk Embroidery Panda Piece Mounted In A Carved Wooden Display Frame Stand" onclick="openLightbox(['images/Chinese silk embroidery  Panda piece mounted in a carved wooden display frame stand.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chinese silk embroidery  Panda piece mounted in a carved wooden display frame stand.jpg" alt="Chinese Silk Embroidery Panda Piece Mounted In A Carved Wooden Display Frame Stand" onclick="openLightbox(['images/Chinese silk embroidery  Panda piece mounted in a carved wooden display frame stand.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chinese Silk Embroidery Panda Piece Mounted In A Carved Wooden Display Frame Stand
@@ -3046,7 +3055,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-68" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Abacus Gift set inside new.jpg" alt="Abacus Gift Set" onclick="openLightbox(['images/Abacus Gift set inside new.jpg', 'images/Abacus Gift set outside new.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Abacus Gift set outside new.jpg" alt="Abacus Gift Set" onclick="openLightbox(['images/Abacus Gift set inside new.jpg', 'images/Abacus Gift set outside new.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Abacus Gift set inside new.jpg" alt="Abacus Gift Set" onclick="openLightbox(['images/Abacus Gift set inside new.jpg', 'images/Abacus Gift set outside new.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Abacus Gift set outside new.jpg" alt="Abacus Gift Set" onclick="openLightbox(['images/Abacus Gift set inside new.jpg', 'images/Abacus Gift set outside new.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Abacus Gift Set
@@ -3086,7 +3095,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-69" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Adapter new.jpg" alt="Adapter" onclick="openLightbox(['images/Adapter new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Adapter new.jpg" alt="Adapter" onclick="openLightbox(['images/Adapter new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Adapter
@@ -3126,7 +3135,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-70" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Bamboo Utensil set 6x new.jpg" alt="Bamboo Utensil Set 6X" onclick="openLightbox(['images/Bamboo Utensil set 6x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Bamboo Utensil set 6x new.jpg" alt="Bamboo Utensil Set 6X" onclick="openLightbox(['images/Bamboo Utensil set 6x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Bamboo Utensil Set 6X
@@ -3166,7 +3175,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-71" class="sold-row" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chefman Electric Kettle digital barely used.jpg" alt="Chefman Electric Kettle Digital Barely Used" onclick="openLightbox(['images/Chefman Electric Kettle digital barely used.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chefman Electric Kettle digital barely used.jpg" alt="Chefman Electric Kettle Digital Barely Used" onclick="openLightbox(['images/Chefman Electric Kettle digital barely used.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chefman Electric Kettle Digital Barely Used
@@ -3206,7 +3215,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-72" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chinese decorations 5x new.jpg" alt="Chinese Decorations 5X" onclick="openLightbox(['images/Chinese decorations 5x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chinese decorations 5x new.jpg" alt="Chinese Decorations 5X" onclick="openLightbox(['images/Chinese decorations 5x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chinese Decorations 5X
@@ -3246,7 +3255,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-73" class="sold-row" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/condiment container wooden holder.jpg" alt="Condiment Container Wooden Holder" onclick="openLightbox(['images/condiment container wooden holder.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/condiment container wooden holder.jpg" alt="Condiment Container Wooden Holder" onclick="openLightbox(['images/condiment container wooden holder.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Condiment Container Wooden Holder
@@ -3286,7 +3295,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-74" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Crock Pot mini slow cooker.jpg" alt="Crock Pot Mini Slow Cooker" onclick="openLightbox(['images/Crock Pot mini slow cooker.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Crock Pot mini slow cooker.jpg" alt="Crock Pot Mini Slow Cooker" onclick="openLightbox(['images/Crock Pot mini slow cooker.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Crock Pot Mini Slow Cooker
@@ -3326,7 +3335,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-75" class="" data-category="Furniture">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Dining Table set and 6 chairs.jpg" alt="Dining Table Set And 6 Chairs" onclick="openLightbox(['images/Dining Table set and 6 chairs.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Dining Table set and 6 chairs.jpg" alt="Dining Table Set And 6 Chairs" onclick="openLightbox(['images/Dining Table set and 6 chairs.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Dining Table Set And 6 Chairs
@@ -3366,7 +3375,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-76" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/GE alarm kit new.jpg" alt="Ge Alarm Kit" onclick="openLightbox(['images/GE alarm kit new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/GE alarm kit new.jpg" alt="Ge Alarm Kit" onclick="openLightbox(['images/GE alarm kit new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Ge Alarm Kit
@@ -3406,7 +3415,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-77" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Green Deer Scarf lucky for college application.jpg" alt="Green Deer Scarf Lucky For College Application" onclick="openLightbox(['images/Green Deer Scarf lucky for college application.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Green Deer Scarf lucky for college application.jpg" alt="Green Deer Scarf Lucky For College Application" onclick="openLightbox(['images/Green Deer Scarf lucky for college application.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Green Deer Scarf Lucky For College Application
@@ -3446,7 +3455,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-78" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Hotpot travel friendly.jpg" alt="Hotpot Travel Friendly" onclick="openLightbox(['images/Hotpot travel friendly.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Hotpot travel friendly.jpg" alt="Hotpot Travel Friendly" onclick="openLightbox(['images/Hotpot travel friendly.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Hotpot Travel Friendly
@@ -3486,7 +3495,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-79" class="sold-row" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Iron cast pot inside new.jpg" alt="Iron Cast Pot" onclick="openLightbox(['images/Iron cast pot inside new.jpg', 'images/Iron cast pot outside new.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Iron cast pot outside new.jpg" alt="Iron Cast Pot" onclick="openLightbox(['images/Iron cast pot inside new.jpg', 'images/Iron cast pot outside new.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Iron cast pot inside new.jpg" alt="Iron Cast Pot" onclick="openLightbox(['images/Iron cast pot inside new.jpg', 'images/Iron cast pot outside new.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Iron cast pot outside new.jpg" alt="Iron Cast Pot" onclick="openLightbox(['images/Iron cast pot inside new.jpg', 'images/Iron cast pot outside new.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Iron Cast Pot
@@ -3526,7 +3535,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-80" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/knife set.jpg" alt="Knife Set" onclick="openLightbox(['images/knife set.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/knife set.jpg" alt="Knife Set" onclick="openLightbox(['images/knife set.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Knife Set
@@ -3566,7 +3575,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-81" class="sold-row" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Microwave contrainers 7x new.jpg" alt="Microwave Contrainers 7X" onclick="openLightbox(['images/Microwave contrainers 7x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Microwave contrainers 7x new.jpg" alt="Microwave Contrainers 7X" onclick="openLightbox(['images/Microwave contrainers 7x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Microwave Contrainers 7X
@@ -3606,7 +3615,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-82" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Peppermint Pillow.jpg" alt="Peppermint Pillow" onclick="openLightbox(['images/Peppermint Pillow.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Peppermint Pillow.jpg" alt="Peppermint Pillow" onclick="openLightbox(['images/Peppermint Pillow.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Peppermint Pillow
@@ -3646,7 +3655,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-83" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Tea pot set of 4.jpg" alt="Tea Pot Set Of 4" onclick="openLightbox(['images/Tea pot set of 4.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Tea pot set of 4.jpg" alt="Tea Pot Set Of 4" onclick="openLightbox(['images/Tea pot set of 4.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Tea Pot Set Of 4
@@ -3686,7 +3695,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-84" class="" data-category="Tools">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Tool bag new.jpg" alt="Tool Bag" onclick="openLightbox(['images/Tool bag new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Tool bag new.jpg" alt="Tool Bag" onclick="openLightbox(['images/Tool bag new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Tool Bag
@@ -3726,7 +3735,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-85" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Toothpick set.jpg" alt="Toothpick Set" onclick="openLightbox(['images/Toothpick set.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Toothpick set.jpg" alt="Toothpick Set" onclick="openLightbox(['images/Toothpick set.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Toothpick Set
@@ -3766,7 +3775,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-86" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Wine glasses 7x.jpg" alt="Wine Glasses 7X" onclick="openLightbox(['images/Wine glasses 7x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Wine glasses 7x.jpg" alt="Wine Glasses 7X" onclick="openLightbox(['images/Wine glasses 7x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Wine Glasses 7X
@@ -3806,7 +3815,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-87" class="" data-category="Furniture">
             <td style="padding:16px;text-align:center;">
-                <img src="images/2 shelfs with Wii Xbox games and CDs.jpg" alt="2 Shelfs With Wii Xbox Games And Cds" onclick="openLightbox(['images/2 shelfs with Wii Xbox games and CDs.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/2 shelfs with Wii Xbox games and CDs.jpg" alt="2 Shelfs With Wii Xbox Games And Cds" onclick="openLightbox(['images/2 shelfs with Wii Xbox games and CDs.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 2 Shelfs With Wii Xbox Games And Cds
@@ -3846,7 +3855,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-88" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Candles 5x new.jpg" alt="Candles 5X" onclick="openLightbox(['images/Candles 5x new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Candles 5x new.jpg" alt="Candles 5X" onclick="openLightbox(['images/Candles 5x new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Candles 5X
@@ -3886,7 +3895,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-89" class="sold-row" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Instant Pot Duo 7-in-1 Stainless Steel 8 Quart.jpg" alt="Instant Pot Duo 7-In-1 Stainless Steel 8 Quart" onclick="openLightbox(['images/Instant Pot Duo 7-in-1 Stainless Steel 8 Quart.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Instant Pot Duo 7-in-1 Stainless Steel 8 Quart.jpg" alt="Instant Pot Duo 7-In-1 Stainless Steel 8 Quart" onclick="openLightbox(['images/Instant Pot Duo 7-in-1 Stainless Steel 8 Quart.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Instant Pot Duo 7-In-1 Stainless Steel 8 Quart
@@ -3926,7 +3935,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-90" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Karaoke machine.jpg" alt="Karaoke Machine" onclick="openLightbox(['images/Karaoke machine.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Karaoke machine.jpg" alt="Karaoke Machine" onclick="openLightbox(['images/Karaoke machine.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Karaoke Machine
@@ -3966,7 +3975,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-91" class="sold-row" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Lego flower in ceramic vase.jpg" alt="Lego Flower In Ceramic Vase" onclick="openLightbox(['images/Lego flower in ceramic vase.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Lego flower in ceramic vase.jpg" alt="Lego Flower In Ceramic Vase" onclick="openLightbox(['images/Lego flower in ceramic vase.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Lego Flower In Ceramic Vase
@@ -4006,7 +4015,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-92" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Lego Lucky Bamboo.jpg" alt="Lego Lucky Bamboo" onclick="openLightbox(['images/Lego Lucky Bamboo.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Lego Lucky Bamboo.jpg" alt="Lego Lucky Bamboo" onclick="openLightbox(['images/Lego Lucky Bamboo.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Lego Lucky Bamboo
@@ -4046,7 +4055,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-93" class="" data-category="Decoration">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Lego Orchid.jpg" alt="Lego Orchid" onclick="openLightbox(['images/Lego Orchid.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Lego Orchid.jpg" alt="Lego Orchid" onclick="openLightbox(['images/Lego Orchid.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Lego Orchid
@@ -4086,7 +4095,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-94" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/TV and TV stand and Wii and DVD and AppleTV.jpg" alt="Tv And Tv Stand And Wii And Dvd And Appletv" onclick="openLightbox(['images/TV and TV stand and Wii and DVD and AppleTV.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/TV and TV stand and Wii and DVD and AppleTV.jpg" alt="Tv And Tv Stand And Wii And Dvd And Appletv" onclick="openLightbox(['images/TV and TV stand and Wii and DVD and AppleTV.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Tv And Tv Stand And Wii And Dvd And Appletv
@@ -4126,7 +4135,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-95" class="" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Plant food and insect stickers.jpg" alt="Plant Food And Insect Stickers" onclick="openLightbox(['images/Plant food and insect stickers.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Plant food and insect stickers.jpg" alt="Plant Food And Insect Stickers" onclick="openLightbox(['images/Plant food and insect stickers.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Plant Food And Insect Stickers
@@ -4166,7 +4175,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-96" class="" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Garden bench.jpg" alt="Garden Bench" onclick="openLightbox(['images/Garden bench.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Garden bench.jpg" alt="Garden Bench" onclick="openLightbox(['images/Garden bench.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Garden Bench
@@ -4211,7 +4220,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-97" class="" data-category="Outdoor">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Garden set foldable.jpg" alt="Garden Set Foldable" onclick="openLightbox(['images/Garden set foldable.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Garden set foldable.jpg" alt="Garden Set Foldable" onclick="openLightbox(['images/Garden set foldable.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Garden Set Foldable
@@ -4251,7 +4260,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-98" class="" data-category="Outdoor">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Ourdoor foldable bed.jpg" alt="Ourdoor Foldable Bed" onclick="openLightbox(['images/Ourdoor foldable bed.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Ourdoor foldable bed.jpg" alt="Ourdoor Foldable Bed" onclick="openLightbox(['images/Ourdoor foldable bed.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Ourdoor Foldable Bed
@@ -4291,7 +4300,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-99" class="" data-category="Outdoor">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Picnic mat foldable.jpg" alt="Picnic Mat Foldable" onclick="openLightbox(['images/Picnic mat foldable.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Picnic mat foldable.jpg" alt="Picnic Mat Foldable" onclick="openLightbox(['images/Picnic mat foldable.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Picnic Mat Foldable
@@ -4331,7 +4340,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-100" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/SILHOUETTE Targets 100pack New.jpg" alt="Silhouette Targets 100Pack" onclick="openLightbox(['images/SILHOUETTE Targets 100pack New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/SILHOUETTE Targets 100pack New.jpg" alt="Silhouette Targets 100Pack" onclick="openLightbox(['images/SILHOUETTE Targets 100pack New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Silhouette Targets 100Pack
@@ -4371,7 +4380,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-101" class="" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Spray bottle.jpg" alt="Spray Bottle" onclick="openLightbox(['images/Spray bottle.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Spray bottle.jpg" alt="Spray Bottle" onclick="openLightbox(['images/Spray bottle.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Spray Bottle
@@ -4411,7 +4420,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-102" class="" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Succulent and pots.jpg" alt="Succulent And Pots" onclick="openLightbox(['images/Succulent and pots.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Succulent and pots.jpg" alt="Succulent And Pots" onclick="openLightbox(['images/Succulent and pots.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Succulent And Pots
@@ -4451,7 +4460,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-103" class="" data-category="Gift/Collection">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Yangzhou Lacquerware set of 2 new.jpg" alt="Yangzhou Lacquerware Set Of 2" onclick="openLightbox(['images/Yangzhou Lacquerware set of 2 new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Yangzhou Lacquerware set of 2 new.jpg" alt="Yangzhou Lacquerware Set Of 2" onclick="openLightbox(['images/Yangzhou Lacquerware set of 2 new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Yangzhou Lacquerware Set Of 2
@@ -4491,7 +4500,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-104" class="" data-category="Garden">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Fruit protection bags 20+ new.jpg" alt="Fruit Protection Bags 20+" onclick="openLightbox(['images/Fruit protection bags 20+ new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Fruit protection bags 20+ new.jpg" alt="Fruit Protection Bags 20+" onclick="openLightbox(['images/Fruit protection bags 20+ new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Fruit Protection Bags 20+
@@ -4531,7 +4540,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-105" class="sold-row" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Tote with Apple logo new.jpg" alt="Tote With Apple Logo" onclick="openLightbox(['images/Tote with Apple logo new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Tote with Apple logo new.jpg" alt="Tote With Apple Logo" onclick="openLightbox(['images/Tote with Apple logo new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Tote With Apple Logo
@@ -4571,7 +4580,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-106" class="" data-category="Health">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Chinese medicine kit inside.jpg" alt="Chinese Medicine Kit" onclick="openLightbox(['images/Chinese medicine kit inside.jpg', 'images/Chinese medicine kit outside.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Chinese medicine kit outside.jpg" alt="Chinese Medicine Kit" onclick="openLightbox(['images/Chinese medicine kit inside.jpg', 'images/Chinese medicine kit outside.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Chinese medicine kit inside.jpg" alt="Chinese Medicine Kit" onclick="openLightbox(['images/Chinese medicine kit inside.jpg', 'images/Chinese medicine kit outside.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Chinese medicine kit outside.jpg" alt="Chinese Medicine Kit" onclick="openLightbox(['images/Chinese medicine kit inside.jpg', 'images/Chinese medicine kit outside.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chinese Medicine Kit
@@ -4611,7 +4620,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-107" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Ring light.jpg" alt="Ring Light" onclick="openLightbox(['images/Ring light.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Ring light.jpg" alt="Ring Light" onclick="openLightbox(['images/Ring light.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Ring Light
@@ -4651,7 +4660,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-108" class="" data-category="Furniture">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Sofa set inside.jpg" alt="Sofa Set" onclick="openLightbox(['images/Sofa set inside.jpg', 'images/Sofa set outside.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Sofa set outside.jpg" alt="Sofa Set" onclick="openLightbox(['images/Sofa set inside.jpg', 'images/Sofa set outside.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Sofa set inside.jpg" alt="Sofa Set" onclick="openLightbox(['images/Sofa set inside.jpg', 'images/Sofa set outside.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Sofa set outside.jpg" alt="Sofa Set" onclick="openLightbox(['images/Sofa set inside.jpg', 'images/Sofa set outside.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Sofa Set
@@ -4691,7 +4700,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-109" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Kitchen Aid Oven Mitts set of 2 New.jpg" alt="Kitchen Aid Oven Mitts Set Of 2" onclick="openLightbox(['images/Kitchen Aid Oven Mitts set of 2 New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Kitchen Aid Oven Mitts set of 2 New.jpg" alt="Kitchen Aid Oven Mitts Set Of 2" onclick="openLightbox(['images/Kitchen Aid Oven Mitts set of 2 New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Kitchen Aid Oven Mitts Set Of 2
@@ -4731,7 +4740,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-110" class="" data-category="Office">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Tabletop Globe.jpg" alt="Tabletop Globe" onclick="openLightbox(['images/Tabletop Globe.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Tabletop Globe.jpg" alt="Tabletop Globe" onclick="openLightbox(['images/Tabletop Globe.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Tabletop Globe
@@ -4776,7 +4785,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-111" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Samsonite Duffle Bag New.jpg" alt="Samsonite Duffle Bag" onclick="openLightbox(['images/Samsonite Duffle Bag New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Samsonite Duffle Bag New.jpg" alt="Samsonite Duffle Bag" onclick="openLightbox(['images/Samsonite Duffle Bag New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Samsonite Duffle Bag
@@ -4821,7 +4830,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-112" class="" data-category="Electronics">
             <td style="padding:16px;text-align:center;">
-                <img src="images/3-Outlert Cover Adapter New.jpg" alt="3-Outlert Cover Adapter" onclick="openLightbox(['images/3-Outlert Cover Adapter New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/3-Outlert Cover Adapter New.jpg" alt="3-Outlert Cover Adapter" onclick="openLightbox(['images/3-Outlert Cover Adapter New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 3-Outlert Cover Adapter
@@ -4866,7 +4875,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-113" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Golf Set Barely Used.jpg" alt="Golf Set Barely Used" onclick="openLightbox(['images/Golf Set Barely Used.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Golf Set Barely Used.jpg" alt="Golf Set Barely Used" onclick="openLightbox(['images/Golf Set Barely Used.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Golf Set Barely Used
@@ -4911,7 +4920,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-114" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Lady Bike.jpg" alt="Lady Bike" onclick="openLightbox(['images/Lady Bike.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Lady Bike.jpg" alt="Lady Bike" onclick="openLightbox(['images/Lady Bike.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Lady Bike
@@ -4951,7 +4960,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-115" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Mini Bike foldable.jpg" alt="Mini Bike Foldable" onclick="openLightbox(['images/Mini Bike foldable.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Mini Bike foldable.jpg" alt="Mini Bike Foldable" onclick="openLightbox(['images/Mini Bike foldable.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Mini Bike Foldable
@@ -4991,7 +5000,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-116" class="" data-category="Outdoor">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Picnic Mat Folderbale Barely used.jpg" alt="Picnic Mat Folderbale Barely Used" onclick="openLightbox(['images/Picnic Mat Folderbale Barely used.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Picnic Mat Folderbale Barely used.jpg" alt="Picnic Mat Folderbale Barely Used" onclick="openLightbox(['images/Picnic Mat Folderbale Barely used.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Picnic Mat Folderbale Barely Used
@@ -5031,7 +5040,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-117" class="" data-category="Office">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Storage shelf.jpg" alt="Storage Shelf" onclick="openLightbox(['images/Storage shelf.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Storage shelf.jpg" alt="Storage Shelf" onclick="openLightbox(['images/Storage shelf.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Storage Shelf
@@ -5071,7 +5080,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-118" class="" data-category="Sports">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Swimming glasses 4x Swimming hats and balls 2x for young kids.jpg" alt="Swimming Glasses 4X Swimming Hats And Balls 2X For Young Kids" onclick="openLightbox(['images/Swimming glasses 4x Swimming hats and balls 2x for young kids.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Swimming glasses 4x Swimming hats and balls 2x for young kids.jpg" alt="Swimming Glasses 4X Swimming Hats And Balls 2X For Young Kids" onclick="openLightbox(['images/Swimming glasses 4x Swimming hats and balls 2x for young kids.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Swimming Glasses 4X Swimming Hats And Balls 2X For Young Kids
@@ -5111,7 +5120,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-119" class="" data-category="Kitchen">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Neretva Coffee Machine.jpg" alt="Neretva Coffee Machine" onclick="openLightbox(['images/Neretva Coffee Machine.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Neretva Coffee Machine.jpg" alt="Neretva Coffee Machine" onclick="openLightbox(['images/Neretva Coffee Machine.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Neretva Coffee Machine
@@ -5156,7 +5165,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-120" class="" data-category="Office">
             <td style="padding:16px;text-align:center;">
-                <img src="images/White Board Small.jpg" alt="White Board Small" onclick="openLightbox(['images/White Board Small.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/White Board Small.jpg" alt="White Board Small" onclick="openLightbox(['images/White Board Small.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 White Board Small
@@ -5196,7 +5205,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-121" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/3D Puzzles new.jpg" alt="3D Puzzles" onclick="openLightbox(['images/3D Puzzles new.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/3D Puzzles new.jpg" alt="3D Puzzles" onclick="openLightbox(['images/3D Puzzles new.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 3D Puzzles
@@ -5236,7 +5245,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-122" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Animal Wooden Puzzles 3x.jpg" alt="Animal Wooden Puzzles 3X" onclick="openLightbox(['images/Animal Wooden Puzzles 3x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Animal Wooden Puzzles 3x.jpg" alt="Animal Wooden Puzzles 3X" onclick="openLightbox(['images/Animal Wooden Puzzles 3x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Animal Wooden Puzzles 3X
@@ -5276,7 +5285,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-123" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Books Misc.jpg" alt="Books Misc" onclick="openLightbox(['images/Books Misc.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Books Misc.jpg" alt="Books Misc" onclick="openLightbox(['images/Books Misc.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Books Misc
@@ -5316,7 +5325,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-124" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/CDs Misc.jpg" alt="Cds Misc" onclick="openLightbox(['images/CDs Misc.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/CDs Misc.jpg" alt="Cds Misc" onclick="openLightbox(['images/CDs Misc.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Cds Misc
@@ -5356,7 +5365,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-125" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Chemstriy Elements Book New.jpg" alt="Chemstriy Elements Book" onclick="openLightbox(['images/Chemstriy Elements Book New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Chemstriy Elements Book New.jpg" alt="Chemstriy Elements Book" onclick="openLightbox(['images/Chemstriy Elements Book New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Chemstriy Elements Book
@@ -5396,7 +5405,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-126" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Color Books New.jpg" alt="Color Books" onclick="openLightbox(['images/Color Books New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Color Books New.jpg" alt="Color Books" onclick="openLightbox(['images/Color Books New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Color Books
@@ -5436,7 +5445,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-127" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/DVDs Misc.jpg" alt="Dvds Misc" onclick="openLightbox(['images/DVDs Misc.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/DVDs Misc.jpg" alt="Dvds Misc" onclick="openLightbox(['images/DVDs Misc.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Dvds Misc
@@ -5476,7 +5485,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-128" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Girrafe Stuff Animals 2x New.jpg" alt="Girrafe Stuff Animals 2X" onclick="openLightbox(['images/Girrafe Stuff Animals 2x New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Girrafe Stuff Animals 2x New.jpg" alt="Girrafe Stuff Animals 2X" onclick="openLightbox(['images/Girrafe Stuff Animals 2x New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Girrafe Stuff Animals 2X
@@ -5516,7 +5525,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-129" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Magic Cubes 2x.jpg" alt="Magic Cubes 2X" onclick="openLightbox(['images/Magic Cubes 2x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Magic Cubes 2x.jpg" alt="Magic Cubes 2X" onclick="openLightbox(['images/Magic Cubes 2x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Magic Cubes 2X
@@ -5556,7 +5565,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-130" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Magic Cubes 3x.jpg" alt="Magic Cubes 3X" onclick="openLightbox(['images/Magic Cubes 3x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Magic Cubes 3x.jpg" alt="Magic Cubes 3X" onclick="openLightbox(['images/Magic Cubes 3x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Magic Cubes 3X
@@ -5596,7 +5605,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-131" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/National Parks Book New.jpg" alt="National Parks Book" onclick="openLightbox(['images/National Parks Book New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/National Parks Book New.jpg" alt="National Parks Book" onclick="openLightbox(['images/National Parks Book New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 National Parks Book
@@ -5636,7 +5645,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-132" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img src="images/Panda Cushion Foldable Inside.jpg" alt="Panda Cushion Foldable" onclick="openLightbox(['images/Panda Cushion Foldable Inside.jpg', 'images/Panda Cushion Foldable outside.jpg'], 0)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"><img src="images/Panda Cushion Foldable outside.jpg" alt="Panda Cushion Foldable" onclick="openLightbox(['images/Panda Cushion Foldable Inside.jpg', 'images/Panda Cushion Foldable outside.jpg'], 1)" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;"></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Panda Cushion Foldable Inside.jpg" alt="Panda Cushion Foldable" onclick="openLightbox(['images/Panda Cushion Foldable Inside.jpg', 'images/Panda Cushion Foldable outside.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Panda Cushion Foldable outside.jpg" alt="Panda Cushion Foldable" onclick="openLightbox(['images/Panda Cushion Foldable Inside.jpg', 'images/Panda Cushion Foldable outside.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Panda Cushion Foldable
@@ -5676,7 +5685,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-133" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Squishies 3x.jpg" alt="Squishies 3X" onclick="openLightbox(['images/Squishies 3x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Squishies 3x.jpg" alt="Squishies 3X" onclick="openLightbox(['images/Squishies 3x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Squishies 3X
@@ -5716,7 +5725,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-134" class="" data-category="Books & Media">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Tintin Books 2x.jpg" alt="Tintin Books 2X" onclick="openLightbox(['images/Tintin Books 2x.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Tintin Books 2x.jpg" alt="Tintin Books 2X" onclick="openLightbox(['images/Tintin Books 2x.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Tintin Books 2X
@@ -5756,7 +5765,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-135" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Wii games Misc.jpg" alt="Wii Games Misc" onclick="openLightbox(['images/Wii games Misc.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Wii games Misc.jpg" alt="Wii Games Misc" onclick="openLightbox(['images/Wii games Misc.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Wii Games Misc
@@ -5796,7 +5805,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-136" class="" data-category="Games & Toys">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Xbox games Misc.jpg" alt="Xbox Games Misc" onclick="openLightbox(['images/Xbox games Misc.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Xbox games Misc.jpg" alt="Xbox Games Misc" onclick="openLightbox(['images/Xbox games Misc.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Xbox Games Misc
@@ -5836,7 +5845,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-137" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Biege Leather Bag Set.jpg" alt="Biege Leather Bag Set" onclick="openLightbox(['images/Biege Leather Bag Set.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Biege Leather Bag Set.jpg" alt="Biege Leather Bag Set" onclick="openLightbox(['images/Biege Leather Bag Set.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Biege Leather Bag Set
@@ -5876,7 +5885,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-138" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Kate Spad Handbag New.jpg" alt="Kate Spad Handbag" onclick="openLightbox(['images/Kate Spad Handbag New.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Kate Spad Handbag New.jpg" alt="Kate Spad Handbag" onclick="openLightbox(['images/Kate Spad Handbag New.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Kate Spad Handbag
@@ -5916,7 +5925,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-139" class="sold-row" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Kate Spade Barely used.jpg" alt="Kate Spade Barely Used" onclick="openLightbox(['images/Kate Spade Barely used.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Kate Spade Barely used.jpg" alt="Kate Spade Barely Used" onclick="openLightbox(['images/Kate Spade Barely used.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Kate Spade Barely Used
@@ -5956,7 +5965,7 @@
         </tr>
         <tr style="background:#ffffff;" id="row-140" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Kate Spade COVE STREET IRINI MINT MOJITO Barely Used.jpg" alt="Kate Spade Cove Street Irini Mint Mojito Barely Used" onclick="openLightbox(['images/Kate Spade COVE STREET IRINI MINT MOJITO Barely Used.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Kate Spade COVE STREET IRINI MINT MOJITO Barely Used.jpg" alt="Kate Spade Cove Street Irini Mint Mojito Barely Used" onclick="openLightbox(['images/Kate Spade COVE STREET IRINI MINT MOJITO Barely Used.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Kate Spade Cove Street Irini Mint Mojito Barely Used
@@ -5996,7 +6005,7 @@
         </tr>
         <tr style="background:#f9f9fb;" id="row-141" class="" data-category="Accessory">
             <td style="padding:16px;text-align:center;">
-                <img src="images/Kate Spade MIKAS POND STACY Wallet BAZOOKA PINK.jpg" alt="Kate Spade Mikas Pond Stacy Wallet Bazooka Pink" onclick="openLightbox(['images/Kate Spade MIKAS POND STACY Wallet BAZOOKA PINK.jpg'], 0)" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;">
+                <img data-src="images/Kate Spade MIKAS POND STACY Wallet BAZOOKA PINK.jpg" alt="Kate Spade Mikas Pond Stacy Wallet Bazooka Pink" onclick="openLightbox(['images/Kate Spade MIKAS POND STACY Wallet BAZOOKA PINK.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
             </td>
             <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
                 Kate Spade Mikas Pond Stacy Wallet Bazooka Pink
@@ -6038,7 +6047,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on April 25, 2026 at 06:32 PM</p>
+<p class="footer">Generated on April 26, 2026 at 09:40 AM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -6065,6 +6074,26 @@
 </div>
 
 <script>
+// ── Intersection Observer — load images only when in view ─────────────────
+(function() {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const img = entry.target;
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                img.classList.remove('lazy-img');
+            }
+            obs.unobserve(img);
+        });
+    }, {
+        rootMargin: '150px 0px',  // start loading 150px before entering view
+        threshold: 0.01
+    });
+    document.querySelectorAll('.lazy-img').forEach(img => observer.observe(img));
+})();
+
 // ── Lightbox ───────────────────────────────────────────────────────────────
 let _lbImages = [], _lbIndex = 0;
 
