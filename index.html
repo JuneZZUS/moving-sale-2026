@@ -6527,7 +6527,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on April 28, 2026 at 11:39 PM</p>
+<p class="footer">Generated on April 28, 2026 at 11:47 PM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -9160,12 +9160,13 @@ function getSoldItems() {
     const sold = getSoldItems();
     Object.keys(sold).forEach(key => {
         if (sold[key]) {
-            const rows = document.querySelectorAll('tr[id]');
+            const rows = document.querySelectorAll('tr[data-key]');
             rows.forEach(row => {
+                if (row.dataset.key !== key) return;
+                // Skip rows already marked sold in the HTML
+                if (row.dataset.sold === '1') return;
                 const btn = row.querySelector('.sold-toggle');
-                if (btn && btn.getAttribute('onclick').includes(`'${key}'`)) {
-                    _markRowSold(row, btn, key, true);
-                }
+                if (btn) _markRowSold(row, btn, key, true);
             });
         }
     });
@@ -9175,14 +9176,13 @@ function _markRowSold(row, btn, key, isSold) {
     if (isSold) {
         row.classList.add('sold-row');
         btn.textContent = '↩️ mark available';
-        // Add badge if not present
-        let badge = btn.previousElementSibling;
-        if (!badge || !badge.classList.contains('sold-banner')) {
-            badge = document.createElement('span');
+        // Only add badge if one doesn't already exist
+        if (!btn.parentNode.querySelector('.sold-banner')) {
+            const badge = document.createElement('span');
             badge.className = 'sold-banner';
             badge.textContent = 'Sold';
-            btn.parentNode.insertBefore(badge, btn);
             btn.parentNode.insertBefore(document.createElement('br'), btn);
+            btn.parentNode.insertBefore(badge, btn);
         }
     } else {
         row.classList.remove('sold-row');
