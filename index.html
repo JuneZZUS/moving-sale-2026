@@ -7610,7 +7610,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on April 29, 2026 at 12:32 AM</p>
+<p class="footer">Generated on April 29, 2026 at 12:40 AM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -7731,6 +7731,7 @@ async function checkPassword() {
         document.getElementById('pwInput').value = '';
         document.getElementById('pwError').textContent = '';
         sessionStorage.setItem('owner_mode', '1');
+        localStorage.setItem('owner_mode', '1');
         showToast('🔓 Owner mode unlocked');
     } else {
         document.getElementById('pwError').textContent = '❌ Incorrect password';
