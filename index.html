@@ -7610,7 +7610,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on April 29, 2026 at 12:51 AM</p>
+<p class="footer">Generated on May 09, 2026 at 09:05 PM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -10292,6 +10292,21 @@ function _markRowSold(row, btn, key, isSold) {
     }
 }
 
+function countAllSold() {
+    const sold = getSoldItems();
+    let count = 0;
+    document.querySelectorAll('tr[data-key]').forEach(row => {
+        const key = row.dataset.key;
+        if (row.dataset.sold === '1' || !!sold[key]) count++;
+    });
+    return count;
+}
+
+function updateSoldCounter() {
+    const statEl = document.querySelector('.stat b[style*="ff3b30"]');
+    if (statEl) statEl.textContent = countAllSold();
+}
+
 function toggleSold(btn, key, idx) {
     const sold    = getSoldItems();
     const isSold  = !sold[key];
@@ -10300,10 +10315,7 @@ function toggleSold(btn, key, idx) {
     const row = document.getElementById('row-' + idx);
     row.dataset.sold = isSold ? '1' : '0';
     _markRowSold(row, btn, key, isSold);
-    // Update sold counter in stats
-    const soldCount = Object.values(sold).filter(Boolean).length;
-    const statEl = document.querySelector('.stat b[style*="ff3b30"]');
-    if (statEl) statEl.textContent = soldCount;
+    updateSoldCounter();
     showToast(isSold ? '🏷️ Marked as sold!' : '↩️ Marked as available');
     sortItems();
 }
@@ -10324,7 +10336,7 @@ function sortItems() {
 }
 
 // Run sort on page load after sold states are applied
-(function() { sortItems(); })();
+(function() { sortItems(); updateSoldCounter(); })();
 const STORAGE_KEY      = 'catalog_manual_prices';
 const LINK_STORAGE_KEY = 'catalog_manual_links';
 const NAME_KEY         = 'catalog_manual_names';
