@@ -7610,7 +7610,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on May 09, 2026 at 09:24 PM</p>
+<p class="footer">Generated on May 09, 2026 at 09:25 PM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -10549,6 +10549,12 @@ function exportJSON() {
     const cats   = getCategories();
     const names  = getManualNames();
 
+    // Also collect sold status baked into HTML (data-sold="1")
+    const soldFromHtml = {};
+    document.querySelectorAll('tr[data-sold="1"][data-key]').forEach(row => {
+        soldFromHtml[row.dataset.key] = true;
+    });
+
     const updated = ITEMS.map(item => {
         const key = (item.source_files || [item.source_file || item.name])[0];
         const out = Object.assign({}, item);
@@ -10556,7 +10562,8 @@ function exportJSON() {
         if (links[key])  out.manual_link  = links[key];
         if (cats[key])   out.category     = cats[key];
         if (names[key])  out.manual_name  = names[key];
-        out.sold = !!sold[key];
+        // Include sold from BOTH localStorage AND baked-in HTML
+        out.sold = !!sold[key] || !!soldFromHtml[key];
         return out;
     });
 
