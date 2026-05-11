@@ -10232,7 +10232,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on May 10, 2026 at 07:44 PM</p>
+<p class="footer">Generated on May 10, 2026 at 07:49 PM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -13364,7 +13364,7 @@ function sortItems() {
 }
 
 // Run sort on page load after sold states are applied
-(function() { sortItems(); updateSoldCounter(); })();
+(function() { sortItems(); updateSoldCounter(); updateConditionCounters(); })();
 const STORAGE_KEY      = 'catalog_manual_prices';
 const LINK_STORAGE_KEY = 'catalog_manual_links';
 const NAME_KEY         = 'catalog_manual_names';
@@ -13395,6 +13395,25 @@ function saveManualCondition(key, cond) {
 })();
 
 // ── Toggle condition New ↔ Used ────────────────────────────────────────────
+function updateConditionCounters() {
+    const conds = getManualConditions();
+    let newCount = 0, usedCount = 0;
+    document.querySelectorAll('tr[data-key]').forEach(row => {
+        const key = row.dataset.key;
+        // Use manual condition if set, otherwise read from condition-view badge text
+        let cond = conds[key];
+        if (!cond) {
+            const view = row.querySelector('.condition-view span');
+            cond = view ? (view.textContent.includes('New') ? 'New' : 'Used') : 'Used';
+        }
+        if (cond === 'New') newCount++; else usedCount++;
+    });
+    const newEl  = document.querySelector('.stat b[style*="34c759"]');
+    const usedEl = document.querySelector('.stat b[style*="ff9500"]');
+    if (newEl)  newEl.textContent  = newCount;
+    if (usedEl) usedEl.textContent = usedCount;
+}
+
 function toggleCondition(el) {
     const key     = el.dataset.key;
     const current = el.dataset.condition || 'Used';
@@ -13411,6 +13430,7 @@ function toggleCondition(el) {
     if (view) view.innerHTML = badge;
 
     saveManualCondition(key, newCond);
+    updateConditionCounters();
     showToast(`🔄 Changed to ${newCond}`);
 }
 
