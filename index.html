@@ -298,7 +298,62 @@
         </thead>
         <tbody>
             
-        <tr style="background:#ffffff;" id="row-0" class="" data-category="Household" data-sold="0" data-key="Steam Iron Inside.HEIC">
+        <tr style="background:#ffffff;" id="row-0" class="" data-category="Other" data-sold="0" data-key="mini sewing machine Inside.heic">
+            <td style="padding:16px;text-align:center;">
+                <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/mini sewing machine Inside.jpg" alt="Mini Sewing Machine" onclick="openLightbox(['images/mini sewing machine Inside.jpg', 'images/mini sewing machine Outside.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/mini sewing machine Outside.jpg" alt="Mini Sewing Machine" onclick="openLightbox(['images/mini sewing machine Inside.jpg', 'images/mini sewing machine Outside.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
+            </td>
+            <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
+                <span class="name-display owner-only"
+                      data-key="mini sewing machine Inside.heic"
+                      onclick="startNameEdit(this)"
+                      title="Click to edit name"
+                      style="cursor:pointer;border-bottom:1.5px dashed #007aff;padding-bottom:1px;">
+                    Mini Sewing Machine
+                </span>
+                <span class="name-view">Mini Sewing Machine</span>
+                <div style="margin-top:4px;"><span class="cat-badge owner-only" onclick="startCategoryEdit(this, 'mini sewing machine Inside.heic')" title="Click to change category" style="background:#aeaeb2;color:#fff;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;">Other</span><span class="cat-badge-view" style="background:#aeaeb2;color:#fff;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Other</span></div>
+            </td>
+            <td style="padding:16px;text-align:center;">
+                <span class="condition-badge owner-only"
+                      data-key="mini sewing machine Inside.heic" data-condition="Used"
+                      onclick="toggleCondition(this)"
+                      title="Click to toggle New / Used"
+                      style="cursor:pointer;">
+                    <span style="background:#ff9500;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">♻️ Used</span>
+                </span>
+                <span class="condition-view"><span style="background:#ff9500;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">♻️ Used</span></span>
+                
+                <br>
+                <button class="sold-toggle owner-only" onclick="toggleSold(this, 'mini sewing machine Inside.heic', 0)">
+                    🏷️ mark as sold
+                </button>
+            </td>
+            <td style="padding:16px;text-align:center;">
+                <span class="price-display"
+                      data-key="mini sewing machine Inside.heic"
+                      data-index="0"
+                      onclick="startEdit(this)"
+                      title="Click to edit price"
+                      style="font-size:16px;font-weight:700;color:#1d1d1f;
+                             cursor:pointer;border-bottom:1.5px dashed #007aff;
+                             padding-bottom:1px;">
+                    ~$100
+                </span>
+                <div style="margin-top:4px;font-size:11px;color:#aeaeb2;" class="owner-only">
+                    ✏️ click to edit
+                </div>
+            </td>
+            <td style="padding:16px;text-align:center;" class="link-cell" data-key="mini sewing machine Inside.heic">
+                
+                <span class="owner-only"
+                      onclick="startLinkEdit(this, 'mini sewing machine Inside.heic')"
+                      style="font-size:12px;color:#aeaeb2;cursor:pointer;
+                             border-bottom:1px dashed #aeaeb2;"
+                      title="Click to add a reference link">+ Add link</span>
+        
+            </td>
+        </tr>
+        <tr style="background:#f9f9fb;" id="row-1" class="" data-category="Household" data-sold="0" data-key="Steam Iron Inside.HEIC">
             <td style="padding:16px;text-align:center;">
                 <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;align-items:center;"><img data-src="images/Steam Iron Inside.jpg" alt="Steam Iron" onclick="openLightbox(['images/Steam Iron Inside.jpg', 'images/Steam Iron Outside.jpg'], 0)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"><img data-src="images/Steam Iron Outside.jpg" alt="Steam Iron" onclick="openLightbox(['images/Steam Iron Inside.jpg', 'images/Steam Iron Outside.jpg'], 1)" class="lazy-img" style="width:80px;height:80px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.10);cursor:zoom-in;background:#e5e5ea;"></div>
             </td>
@@ -324,14 +379,14 @@
                 <span class="condition-view"><span style="background:#ff9500;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">♻️ Used</span></span>
                 
                 <br>
-                <button class="sold-toggle owner-only" onclick="toggleSold(this, 'Steam Iron Inside.HEIC', 0)">
+                <button class="sold-toggle owner-only" onclick="toggleSold(this, 'Steam Iron Inside.HEIC', 1)">
                     🏷️ mark as sold
                 </button>
             </td>
             <td style="padding:16px;text-align:center;">
                 <span class="price-display"
                       data-key="Steam Iron Inside.HEIC"
-                      data-index="0"
+                      data-index="1"
                       onclick="startEdit(this)"
                       title="Click to edit price"
                       style="font-size:16px;font-weight:700;color:#1d1d1f;
@@ -347,61 +402,6 @@
                 
                 <span class="owner-only"
                       onclick="startLinkEdit(this, 'Steam Iron Inside.HEIC')"
-                      style="font-size:12px;color:#aeaeb2;cursor:pointer;
-                             border-bottom:1px dashed #aeaeb2;"
-                      title="Click to add a reference link">+ Add link</span>
-        
-            </td>
-        </tr>
-        <tr style="background:#f9f9fb;" id="row-1" class="" data-category="Other" data-sold="0" data-key="Sewing Machine OUtside.heic">
-            <td style="padding:16px;text-align:center;">
-                <img data-src="images/Sewing Machine OUtside.jpg" alt="Sewing Machine" onclick="openLightbox(['images/Sewing Machine OUtside.jpg'], 0)" class="lazy-img" style="width:110px;height:110px;object-fit:cover;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:zoom-in;background:#e5e5ea;">
-            </td>
-            <td style="padding:16px;font-size:15px;font-weight:500;color:#1d1d1f;">
-                <span class="name-display owner-only"
-                      data-key="Sewing Machine OUtside.heic"
-                      onclick="startNameEdit(this)"
-                      title="Click to edit name"
-                      style="cursor:pointer;border-bottom:1.5px dashed #007aff;padding-bottom:1px;">
-                    Sewing Machine
-                </span>
-                <span class="name-view">Sewing Machine</span>
-                <div style="margin-top:4px;"><span class="cat-badge owner-only" onclick="startCategoryEdit(this, 'Sewing Machine OUtside.heic')" title="Click to change category" style="background:#aeaeb2;color:#fff;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;">Other</span><span class="cat-badge-view" style="background:#aeaeb2;color:#fff;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;">Other</span></div>
-            </td>
-            <td style="padding:16px;text-align:center;">
-                <span class="condition-badge owner-only"
-                      data-key="Sewing Machine OUtside.heic" data-condition="Used"
-                      onclick="toggleCondition(this)"
-                      title="Click to toggle New / Used"
-                      style="cursor:pointer;">
-                    <span style="background:#ff9500;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">♻️ Used</span>
-                </span>
-                <span class="condition-view"><span style="background:#ff9500;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">♻️ Used</span></span>
-                
-                <br>
-                <button class="sold-toggle owner-only" onclick="toggleSold(this, 'Sewing Machine OUtside.heic', 1)">
-                    🏷️ mark as sold
-                </button>
-            </td>
-            <td style="padding:16px;text-align:center;">
-                <span class="price-display"
-                      data-key="Sewing Machine OUtside.heic"
-                      data-index="1"
-                      onclick="startEdit(this)"
-                      title="Click to edit price"
-                      style="font-size:16px;font-weight:700;color:#1d1d1f;
-                             cursor:pointer;border-bottom:1.5px dashed #007aff;
-                             padding-bottom:1px;">
-                    $20 – $2,000
-                </span>
-                <div style="margin-top:4px;font-size:11px;color:#aeaeb2;" class="owner-only">
-                    ✏️ click to edit
-                </div>
-            </td>
-            <td style="padding:16px;text-align:center;" class="link-cell" data-key="Sewing Machine OUtside.heic">
-                
-                <span class="owner-only"
-                      onclick="startLinkEdit(this, 'Sewing Machine OUtside.heic')"
                       style="font-size:12px;color:#aeaeb2;cursor:pointer;
                              border-bottom:1px dashed #aeaeb2;"
                       title="Click to add a reference link">+ Add link</span>
@@ -13537,7 +13537,7 @@
     </table>
 </div>
 
-<p class="footer">Generated on June 10, 2026 at 11:59 AM</p>
+<p class="footer">Generated on June 10, 2026 at 12:01 PM</p>
 <div class="toast" id="toast"></div>
 
 <!-- ── Lightbox ───────────────────────────────────────────────────── -->
@@ -13690,6 +13690,21 @@ if (sessionStorage.getItem('owner_mode')) {
 const ITEMS = [
   {
     "source_files": [
+      "mini sewing machine Inside.heic",
+      "mini sewing machine Outside.heic"
+    ],
+    "name": "Mini Sewing Machine",
+    "condition": "Used",
+    "price": "~$100",
+    "images": [
+      "images/mini sewing machine Inside.jpg",
+      "images/mini sewing machine Outside.jpg"
+    ],
+    "category": "Other",
+    "created_at": "2026-06-10T12:01:53.695468"
+  },
+  {
+    "source_files": [
       "Steam Iron Inside.HEIC",
       "Steam Iron Outside.heic"
     ],
@@ -13702,19 +13717,6 @@ const ITEMS = [
     ],
     "category": "Household",
     "created_at": "2026-06-10T11:56:30.912488"
-  },
-  {
-    "source_files": [
-      "Sewing Machine OUtside.heic"
-    ],
-    "name": "Sewing Machine",
-    "condition": "Used",
-    "price": "$20 \u2013 $2,000",
-    "images": [
-      "images/Sewing Machine OUtside.jpg"
-    ],
-    "category": "Other",
-    "created_at": "2026-06-10T11:56:11.339103"
   },
   {
     "source_files": [
